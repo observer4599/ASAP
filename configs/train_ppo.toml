@@ -1,0 +1,50 @@
+# the task of the run
+task = "train"
+# algorithm used
+algorithm = "ppo"
+# seed of the experiment
+seed = 0
+# if toggled, `torch.backends.cudnn.deterministic=True`
+torch_deterministic = true
+# if toggled, cuda will be enabled by default
+accelerator = "cpu"
+# whether to capture videos of the agent performances (check out `videos` folder)
+capture_video = true
+record_step = 50_000
+# the timesteps it takes to save the network
+save_frequency = 200_000
+# the id of the environment
+env_id = "Acrobot-v1"
+# total timesteps of the experiments, default=500_000
+total_timesteps = 1_000_000
+# the learning rate of the optimizer, default=2.5e-4
+learning_rate = 2.5e-4
+# the number of parallel game environments, default=4
+num_envs = 8
+# the number of steps to run in each environment per policy rollout, default=128
+num_steps = 128
+# Toggle learning rate annealing for policy and value networks, default=True
+anneal_lr = true
+# the discount factor gamma, default=0.99
+gamma = 0.99
+# the lambda for the general advantage estimation, default=0.95
+gae_lambda = 0.95
+# num_minibatches, default=4
+# batch size = (num_envs * num_steps) / num_minibatches
+num_minibatches = 8
+# the K epochs to update the policy, default=4
+update_epochs = 4
+# Toggles advantages normalization, default=True
+norm_adv = true
+# the surrogate clipping coefficient, default=0.2
+clip_coef = 0.2
+# Toggles whether or not to use a clipped loss for the value function, as per the paper, default=True
+clip_vloss = true
+# coefficient of the entropy, default=0.01
+ent_coef = 0.01
+# coefficient of the value function, default=0.5
+vf_coef = 0.5
+# the maximum norm for the gradient clipping, default=0.5
+max_grad_norm = 0.5
+# the target KL divergence threshold, default=None
+# target_kl = None

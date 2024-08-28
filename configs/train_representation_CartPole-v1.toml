@@ -1,0 +1,48 @@
+task = "clustering"
+algorithm = "ppo"
+env_id = "CartPole-v1"
+num_envs = 1
+# seed of the experiment
+seed = 0
+# if toggled, `torch.backends.cudnn.deterministic=True`
+torch_deterministic = true
+# if toggled, cuda will be enabled by default
+accelerator = "cpu"
+# whether to capture videos of the agent performances (check out `videos` folder)
+capture_video = false
+# path to the saved policy
+policy_load_path = "version_0/model.pt"
+# model
+model_load_path = "version_0/model.pt"
+
+
+#%%%       Training representation        %%%
+n_workers = 4
+# the learning rate of the optimizer
+learning_rate = 3e-4
+# the batch size of sample from the reply memory
+batch_size = 128
+# the number of epochs
+epochs = 300
+# Number of clusters
+n_clusters = 5
+
+val_interval = 15
+
+#%%%        Coef          %%%
+imp_coef = 5e-3
+c_coef_end = 5e-2
+c_coef_start = 5e-7
+n_units = 128
+
+
+#%%%       Data Gathering       %%%
+# Training buffer size
+train_bs = 200_000
+train_collect_samples = 100_000
+# Validation buffer size
+val_bs = 40_000
+val_collect_samples = 20_000
+# Testing buffer size
+test_bs = 40_000
+test_collect_samples = 20_000
